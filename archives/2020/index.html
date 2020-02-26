@@ -21,10 +21,10 @@
   var CONFIG = {
     hostname: new URL('https://wuchensu.github.io').hostname,
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Gemini',
     version: '7.7.1',
     exturl: false,
-    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -40,18 +40,18 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
-  <meta name="description" content="通过笔记记录学习与生活的点点滴滴">
+  <meta name="description" content="记录学习、生活、成长">
 <meta property="og:type" content="website">
 <meta property="og:title" content="聚沙成塔">
 <meta property="og:url" content="https://wuchensu.github.io/archives/2020/index.html">
 <meta property="og:site_name" content="聚沙成塔">
-<meta property="og:description" content="通过笔记记录学习与生活的点点滴滴">
+<meta property="og:description" content="记录学习、生活、成长">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="wuchensu">
 <meta name="twitter:card" content="summary">
@@ -116,6 +116,7 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+        <p class="site-subtitle">聚沙成塔</p>
   </div>
 
   <div class="site-nav-toggle">
@@ -141,14 +142,44 @@
     <a href="/program" rel="section"><i class="fa fa-fw fa-tasks"></i>技术笔记</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -173,7 +204,7 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 1 篇日志。 继续努力。</span>
+        <span class="collection-header">嗯..! 目前共计 8 篇日志。 继续努力。</span>
       </div>
 
       
@@ -186,15 +217,155 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2020-02-24T01:37:50+08:00"
-              content="2020-02-24">
-          02-24
+              datetime="2020-02-26T23:48:24+08:00"
+              content="2020-02-26">
+          02-26
         </time>
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/24/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
+          <a class="post-title-link" href="/2020/02/26/interview-design-pattern/" itemprop="url">
+            <span itemprop="name">interview-design-pattern</span>
+          </a>
+      </h2>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-02-26T23:47:52+08:00"
+              content="2020-02-26">
+          02-26
+        </time>
+      </div>
+
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2020/02/26/interview-nosql/" itemprop="url">
+            <span itemprop="name">interview-nosql</span>
+          </a>
+      </h2>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-02-26T23:47:34+08:00"
+              content="2020-02-26">
+          02-26
+        </time>
+      </div>
+
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2020/02/26/interview-database/" itemprop="url">
+            <span itemprop="name">interview-database</span>
+          </a>
+      </h2>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-02-26T23:47:11+08:00"
+              content="2020-02-26">
+          02-26
+        </time>
+      </div>
+
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2020/02/26/interview-network/" itemprop="url">
+            <span itemprop="name">interview-network</span>
+          </a>
+      </h2>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-02-26T23:46:39+08:00"
+              content="2020-02-26">
+          02-26
+        </time>
+      </div>
+
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2020/02/26/interview-concurrency/" itemprop="url">
+            <span itemprop="name">interview-concurrency</span>
+          </a>
+      </h2>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-02-26T23:46:24+08:00"
+              content="2020-02-26">
+          02-26
+        </time>
+      </div>
+
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2020/02/26/interview-basic-program/" itemprop="url">
+            <span itemprop="name">interview-basic-program</span>
+          </a>
+      </h2>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-02-26T23:46:04+08:00"
+              content="2020-02-26">
+          02-26
+        </time>
+      </div>
+
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2020/02/26/interview-algorithm/" itemprop="url">
+            <span itemprop="name">interview-algorithm</span>
+          </a>
+      </h2>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-02-26T23:45:41+08:00"
+              content="2020-02-26">
+          02-26
+        </time>
+      </div>
+
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2020/02/26/interview-cpp/" itemprop="url">
+            <span itemprop="name">面试题-C++语言</span>
           </a>
       </h2>
 
@@ -266,19 +437,35 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">wuchensu</p>
-  <div class="site-description" itemprop="description">通过笔记记录学习与生活的点点滴滴</div>
+  <div class="site-description" itemprop="description">记录学习、生活、成长</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wuchensu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wuchensu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
 
 
 
@@ -308,7 +495,7 @@
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.1
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
   </div>
 
         
@@ -334,7 +521,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
@@ -345,6 +532,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>interview-design-pattern</title>
+    <url>/2020/02/26/interview-design-pattern/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>interview-nosql</title>
+    <url>/2020/02/26/interview-nosql/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>interview-database</title>
+    <url>/2020/02/26/interview-database/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>interview-network</title>
+    <url>/2020/02/26/interview-network/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>interview-concurrency</title>
+    <url>/2020/02/26/interview-concurrency/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>interview-basic-program</title>
+    <url>/2020/02/26/interview-basic-program/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>interview-algorithm</title>
+    <url>/2020/02/26/interview-algorithm/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>面试题-C++语言</title>
+    <url>/2020/02/26/interview-cpp/</url>
+    <content><![CDATA[<p>本篇文章总结C++语言层面的面试题，分两个部分展开：</p>
+<ul>
+<li>C++语言部分</li>
+<li>C++标准库部分<a id="more"></a>
+
+</li>
+</ul>
+<h3 id="C-语言"><a href="#C-语言" class="headerlink" title="C++语言"></a>C++语言</h3><h4 id="虚函数相关问题"><a href="#虚函数相关问题" class="headerlink" title="虚函数相关问题"></a>虚函数相关问题</h4><h5 id="Q-在有继承关系的父子类中，构建和析构一个子类对象时，父子构造函数和析构函数的执行顺序分别是怎样的？"><a href="#Q-在有继承关系的父子类中，构建和析构一个子类对象时，父子构造函数和析构函数的执行顺序分别是怎样的？" class="headerlink" title="Q: 在有继承关系的父子类中，构建和析构一个子类对象时，父子构造函数和析构函数的执行顺序分别是怎样的？"></a>Q: 在有继承关系的父子类中，构建和析构一个子类对象时，父子构造函数和析构函数的执行顺序分别是怎样的？</h5><p><strong>A:</strong> 构造由内向外，析构由外向内。即：先构造父类再构造子类，先析构子类再析构父类</p>
+<h5 id="Q-在有继承关系的类体系中，父类的构造函数和析构函数一定要申明为-virtual-吗？如果不申明为-virtual-会怎样？"><a href="#Q-在有继承关系的类体系中，父类的构造函数和析构函数一定要申明为-virtual-吗？如果不申明为-virtual-会怎样？" class="headerlink" title="Q: 在有继承关系的类体系中，父类的构造函数和析构函数一定要申明为 virtual 吗？如果不申明为 virtual 会怎样？"></a>Q: 在有继承关系的类体系中，父类的构造函数和析构函数一定要申明为 virtual 吗？如果不申明为 virtual 会怎样？</h5><p><strong>A:</strong> 父类构造函数不能声明为virtual,父类析构函数可以声明为virtual，如果要利用多态的特性，则析构函数要申明为virtual。<br>构造函数是用来创建一个新的对象，而虚函数的运行是建立在对象的基础上，在构造函数执行时，对象尚未形成，所以不能将构造函数定义为虚函数<br>如果析构函数不申明为virtual,当delete一个基类的指针时， 如果它指向的是一个子类的对象，那么析构函数不为虚就会导致无法调用子类析构函数，从而导致资源泄露。</p>
+<h5 id="Q-什么是-C-多态？C-多态的实现原理是什么？"><a href="#Q-什么是-C-多态？C-多态的实现原理是什么？" class="headerlink" title="Q:什么是 C++ 多态？C++ 多态的实现原理是什么？"></a>Q:什么是 C++ 多态？C++ 多态的实现原理是什么？</h5><p>可以用一个基类指针指向一个派生类对象，在运行时才决定对象的真实类型，这种方法称之为多态，C++的多态是通过虚函数实现的。</p>
+<p><strong>Q:什么是虚函数？虚函数的实现原理是什么？</strong><br>C++中使用virtual关键字声明虚函数。在定义了虚函数的对象中有一个虚指针指向虚表。</p>
+<h5 id="Q-什么是虚表？虚表的内存结构布局如何？虚表的第一项（或第二项）是什么？"><a href="#Q-什么是虚表？虚表的内存结构布局如何？虚表的第一项（或第二项）是什么？" class="headerlink" title="Q:什么是虚表？虚表的内存结构布局如何？虚表的第一项（或第二项）是什么？"></a>Q:什么是虚表？虚表的内存结构布局如何？虚表的第一项（或第二项）是什么？</h5><p>虚表存储虚函数对应的函数地址，第一项是type info for point,用于实现RTTI(运行时类型绑定)</p>
+<h5 id="Q-菱形继承（类D同时继承B和C，B和C又继承自A）体系下，虚表在各个类中的布局如何？如果类B和类C同时有一个成员变了m，m如何在D对象的内存地址上分布的？是否会相互覆盖？"><a href="#Q-菱形继承（类D同时继承B和C，B和C又继承自A）体系下，虚表在各个类中的布局如何？如果类B和类C同时有一个成员变了m，m如何在D对象的内存地址上分布的？是否会相互覆盖？" class="headerlink" title="Q:菱形继承（类D同时继承B和C，B和C又继承自A）体系下，虚表在各个类中的布局如何？如果类B和类C同时有一个成员变了m，m如何在D对象的内存地址上分布的？是否会相互覆盖？"></a>Q:菱形继承（类D同时继承B和C，B和C又继承自A）体系下，虚表在各个类中的布局如何？如果类B和类C同时有一个成员变了m，m如何在D对象的内存地址上分布的？是否会相互覆盖？</h5><p>待补充</p>
+<h3 id="C-标准库"><a href="#C-标准库" class="headerlink" title="C++标准库"></a>C++标准库</h3>]]></content>
+      <categories>
+        <category>面试题</category>
+        <category>C++语言</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+</search>
